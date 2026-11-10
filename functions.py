@@ -11,7 +11,7 @@ def calculate_altersklasse(alter_person):
 
 
 def get_top5_praemien(praemien, plz, altersklasse):
-    """ Holt die günstigsten 5 Prämien"""
+    """ Holt die günstigsten 5 Prämien """
     top5_praemien = {}
     for franchise in [300, 2500]:
         key = (plz, altersklasse, franchise)
