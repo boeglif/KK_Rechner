@@ -16,7 +16,7 @@ plz = 4600
 #-------------------------------
 
 from data.data_import import lade_praemien
-from functions import calculate_altersklasse, get_top5_praemien
+from functions import calculate_altersklasse, get_top5_praemien, choose_franchise, get_list_versicherungen, choose_versicherung
 from formats import format_top5_praemien
 #Alle Prämien laden
 praemien = lade_praemien("data/praemien_2027.csv")
@@ -30,17 +30,8 @@ format_top5_praemien(top5)
 #Story 5
 
 #Frachise wählen
-chosen_franchise = int(input("Welche Franchise möchten Sie? 300/2500"))
-while chosen_franchise not in top5:
-    print("Ungültige Franchise: Bitte 300 oder 2500 eingeben.")
-    chosen_franchise = int(input("Welche Franchise möchten Sie? 300/2500"))
+chosen_franchise = choose_franchise(top5)
 
 #Versicherung wählen
-versicherungen = []
-for versicherung, praemie in top5[chosen_franchise]:
-    versicherungen.append(versicherung)
-
-chosen_versicherung = input("Welche der 5 Versicherungen möchten Sie? ")
-while chosen_versicherung not in versicherungen:
-    print("Ungültige Versicherung. Bitte geben Sie eine der 5 günstigsten Versicherungen an.")
-    chosen_versicherung = input("Welche der 5 Versicherungen möchten Sie? ")
+versicherungen = get_list_versicherungen(top5, chosen_franchise)
+chosen_versicherung = choose_versicherung(versicherungen)
