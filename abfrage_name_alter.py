@@ -1,4 +1,4 @@
-def abfrage_name_alter():
+def abfrage_name_alter_plz():
 
     alter_personen = []
     namen_personen = []
@@ -49,3 +49,4 @@ def abfrage_name_alter():
     print("Postleitzahl:", plz)
     print("Namen:", namen_personen)
     print("Alter:", alter_personen)
+
