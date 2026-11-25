@@ -1,9 +1,11 @@
-def abfrage_plz():
+def abfrage_plz(praemien):
     """ Fragt die plz ab. """
     while True:
             plz = input("Wie lautet Ihre Postleitzahl? ")
             if len(plz) != 4 or not plz.isdigit():
                 print("Fehler: Die Postleitzahl muss aus genau 4 Zahlen bestehen.")
+            elif (int(plz), "19-25", 300) not in praemien:
+                print("Fehler: Ungültige Postleitzahl.")
             else:
                 break
     print("Postleitzahl:", plz)

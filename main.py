@@ -8,7 +8,7 @@ praemien = lade_praemien("data/praemien_2027.csv")
 add_people = "y"
 
 #Story 1
-plz = abfrage_plz()
+plz = abfrage_plz(praemien)
 
 #Leere Listen vergeben
 namen_personen = []
