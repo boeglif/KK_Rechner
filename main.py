@@ -16,10 +16,26 @@ plz = 4600
 #-------------------------------
 
 from data.data_import import lade_praemien
-from functions import calculate_altersklasse, get_top5_praemien, choose_franchise, get_list_versicherungen, choose_versicherung
+from functions import calculate_altersklasse, get_top5_praemien, choose_franchise, get_list_versicherungen, choose_versicherung, abfrage_plz, abfrage_name, abfrage_alter
 from formats import format_top5_praemien
 #Alle Prämien laden
 praemien = lade_praemien("data/praemien_2027.csv")
+
+#Schlaufe Person hinzufügen
+add_people = "y"
+
+#Story 1
+plz = abfrage_plz()
+
+#Story 2
+while add_people == "y":
+    namen_personen = abfrage_name()
+    alter_personen = abfrage_alter()
+    add_people = input("Wollen Sie mehr Personen hinzufügen? y/n ")
+    if add_people == "y" or add_people == "n":
+        break
+    else:
+        print("Fehler: Bitte y oder n eingeben.")
 
 #Story 3 & 4
 altersklasse = calculate_altersklasse(alter_person)

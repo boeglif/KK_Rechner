@@ -1,5 +1,54 @@
-from data.data_import import lade_praemien
+def abfrage_plz():
+    """ Fragt die plz ab. """
+    while True:
+            plz = input("Wie lautet Ihre Postleitzahl? ")
+    
+            if len(plz) != 4 or not plz.isdigit():
+                print("Fehler: Die Postleitzahl muss aus genau 4 Zahlen bestehen.")
+    
+            else:
+                break
+    print("Postleitzahl:", plz)
+    return int(plz)
 
+
+def abfrage_name():
+    """ Fragt den Namen einer Person ab und gibt eine Liste zurück."""
+    namen_personen = []
+    add_people = "y"
+    while add_people == "y":
+
+        while True:
+            name = input("Wie ist der Name der Person? ")
+
+            if name.strip() == "":
+                print("Fehler: Bitte geben Sie einen Namen ein.")
+            else:
+                namen_personen.append(name)
+                break
+
+    print("Namen:", namen_personen)
+    return namen_personen
+
+def abfrage_alter():
+    """ Fragt das Alter einer Person ab und gibt eine Liste zurück. """
+    alter_personen = []
+    add_people = "y"
+    while add_people == "y":
+        while True:
+                    alter = input("Wie alt ist die Person? ")
+        
+                    if not alter.isdigit():
+                        print("Fehler: Bitte geben Sie eine ganze Zahl ein.")
+        
+                    elif int(alter) < 19 or int(alter) > 120:
+                        print("Fehler: Das Alter muss zwischen 19 und 120 Jahre liegen.")
+        
+                    else:
+                        alter_personen.append(int(alter))
+                        break
+        print("Alter:", alter_personen)
+        return alter_personen
 
 def calculate_altersklasse(alter_person):
     """ Rechnet das Alter in eine Altersklasse um """
@@ -25,6 +74,7 @@ def choose_franchise(top5):
     while chosen_franchise not in top5:
         print("Ungültige Franchise: Bitte 300 oder 2500 eingeben.")
         chosen_franchise = int(input("Welche Franchise möchten Sie? 300/2500: "))
+    print(f"Sie haben erfolgreich die Franchise {chosen_franchise} ausgewählt.")
     return chosen_franchise
 
 def get_list_versicherungen(top5, chosen_franchise):
