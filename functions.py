@@ -12,9 +12,11 @@ def abfrage_plz():
 def abfrage_name(namen_personen):
     """ Fragt den Namen einer Person ab und gibt eine Liste zurück."""
     while True:
-        name = input("Wie ist der Name der Person? ")
-        if name.strip() == "":
+        name = input("Wie ist der Name der Person? ").strip().title()
+        if name == "":
             print("Fehler: Bitte geben Sie einen Namen ein.")
+        elif name in namen_personen:
+            print("Fehler: Dieser Name wurde bereits vergeben.")
         else:
             namen_personen.append(name)
             break
