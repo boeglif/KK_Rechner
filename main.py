@@ -1,20 +1,3 @@
-
-
-
-
-
-
-
-
-#User-Stories 3-5 JR
-#benötigte Variabeln von vorher: plz (Int), alter_person (Int)
-
-#-------------------------------
-#LÖSCHEN
-alter_person = 24
-plz = 4600
-#-------------------------------
-
 from data.data_import import lade_praemien
 from functions import calculate_altersklasse, get_top5_praemien, choose_franchise, get_list_versicherungen, choose_versicherung, abfrage_plz, abfrage_name, abfrage_alter
 from formats import format_top5_praemien
