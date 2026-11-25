@@ -2,53 +2,38 @@ def abfrage_plz():
     """ Fragt die plz ab. """
     while True:
             plz = input("Wie lautet Ihre Postleitzahl? ")
-    
             if len(plz) != 4 or not plz.isdigit():
                 print("Fehler: Die Postleitzahl muss aus genau 4 Zahlen bestehen.")
-    
             else:
                 break
     print("Postleitzahl:", plz)
     return int(plz)
 
-
-def abfrage_name():
+def abfrage_name(namen_personen):
     """ Fragt den Namen einer Person ab und gibt eine Liste zurück."""
-    namen_personen = []
-    add_people = "y"
-    while add_people == "y":
-
-        while True:
-            name = input("Wie ist der Name der Person? ")
-
-            if name.strip() == "":
-                print("Fehler: Bitte geben Sie einen Namen ein.")
-            else:
-                namen_personen.append(name)
-                break
-
+    while True:
+        name = input("Wie ist der Name der Person? ")
+        if name.strip() == "":
+            print("Fehler: Bitte geben Sie einen Namen ein.")
+        else:
+            namen_personen.append(name)
+            break
     print("Namen:", namen_personen)
     return namen_personen
 
-def abfrage_alter():
+def abfrage_alter(alter_personen):
     """ Fragt das Alter einer Person ab und gibt eine Liste zurück. """
-    alter_personen = []
-    add_people = "y"
-    while add_people == "y":
-        while True:
-                    alter = input("Wie alt ist die Person? ")
-        
-                    if not alter.isdigit():
-                        print("Fehler: Bitte geben Sie eine ganze Zahl ein.")
-        
-                    elif int(alter) < 19 or int(alter) > 120:
-                        print("Fehler: Das Alter muss zwischen 19 und 120 Jahre liegen.")
-        
-                    else:
-                        alter_personen.append(int(alter))
-                        break
-        print("Alter:", alter_personen)
-        return alter_personen
+    while True:
+        alter = input("Wie alt ist die Person? ")
+        if not alter.isdigit():
+            print("Fehler: Bitte geben Sie eine ganze Zahl ein.")
+        elif int(alter) < 19 or int(alter) > 120:
+            print("Fehler: Das Alter muss zwischen 19 und 120 Jahre liegen.")
+        else:
+            alter_personen.append(int(alter))
+            break
+    print("Alter:", alter_personen)
+    return alter_personen
 
 def calculate_altersklasse(alter_person):
     """ Rechnet das Alter in eine Altersklasse um """

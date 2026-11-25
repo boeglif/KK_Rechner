@@ -28,14 +28,15 @@ add_people = "y"
 plz = abfrage_plz()
 
 #Story 2
+namen_personen = []
+alter_personen = []
 while add_people == "y":
-    namen_personen = abfrage_name()
-    alter_personen = abfrage_alter()
+    namen_personen = abfrage_name(namen_personen)
+    alter_personen = abfrage_alter(alter_personen)
     add_people = input("Wollen Sie mehr Personen hinzufügen? y/n ")
-    if add_people == "y" or add_people == "n":
-        break
-    else:
+    while add_people != "y" and add_people != "n":
         print("Fehler: Bitte y oder n eingeben.")
+        add_people = input("Wollen Sie mehr Personen hinzufügen? y/n ")
 
 #Story 3 & 4
 altersklasse = calculate_altersklasse(alter_person)
