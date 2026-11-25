@@ -20,7 +20,7 @@ while add_people == "y":
     alter_personen = abfrage_alter(alter_personen)
 
     #Story 3 & 4
-    altersklasse = calculate_altersklasse(alter_personen)
+    altersklasse = calculate_altersklasse(alter_personen[-1])
     top5 = get_top5_praemien(praemien, plz, altersklasse)
 
     format_top5_praemien(top5)
