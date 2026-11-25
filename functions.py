@@ -70,12 +70,12 @@ def get_list_versicherungen(top5, chosen_franchise):
     """ Erstellt eine Liste der top5 Versicherungen der gewählten Franchise """
     versicherungen = []
     for versicherung, praemie in top5[chosen_franchise]:
-        versicherungen.append(versicherung)
+        versicherungen.append(versicherung.lower())
     return versicherungen
 
 def choose_versicherung(versicherungen):
     """ Fragt die Versicherung ab """
-    chosen_versicherung = input("Welche der 5 Versicherungen möchten Sie? ")
+    chosen_versicherung = input("Welche der 5 Versicherungen möchten Sie? ").strip().lower()
     while chosen_versicherung not in versicherungen:
         print("Ungültige Versicherung. Bitte geben Sie eine der 5 günstigsten Versicherungen an. ")
         chosen_versicherung = input("Welche der 5 Versicherungen möchten Sie? ")
