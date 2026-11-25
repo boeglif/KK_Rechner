@@ -22,7 +22,7 @@ while add_people == "y":
         add_people = input("Wollen Sie mehr Personen hinzufügen? y/n ")
 
 #Story 3 & 4
-altersklasse = calculate_altersklasse(alter_person)
+altersklasse = calculate_altersklasse(alter_personen)
 top5 = get_top5_praemien(praemien, plz, altersklasse)
 
 format_top5_praemien(top5)

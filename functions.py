@@ -37,11 +37,11 @@ def abfrage_alter(alter_personen):
     print("Alter:", alter_personen)
     return alter_personen
 
-def calculate_altersklasse(alter_person):
+def calculate_altersklasse(alter_personen):
     """ Rechnet das Alter in eine Altersklasse um """
-    if 18 < alter_person <= 25:
+    if 18 < alter_personen[-1] <= 25:
         altersklasse = "19-25"
-    elif alter_person > 25:
+    elif alter_personen[-1] > 25:
         altersklasse = "26-120"
     return altersklasse
 
