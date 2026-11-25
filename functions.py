@@ -22,7 +22,7 @@ def abfrage_name(namen_personen):
         else:
             namen_personen.append(name)
             break
-    print("Namen:", namen_personen)
+    print("Name:", namen_personen[-1])
     return namen_personen
 
 def abfrage_alter(alter_personen):
