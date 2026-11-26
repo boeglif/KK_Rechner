@@ -1,6 +1,6 @@
 from data.data_import import lade_praemien
 from functions import calculate_altersklasse, get_top5_praemien, choose_franchise, get_list_versicherungen, choose_versicherung, abfrage_plz, abfrage_name, abfrage_alter
-from formats import format_top5_praemien
+from formats import format_top5_praemien, zeige_zusammenfassung
 #Alle Prämien laden
 praemien = lade_praemien("data/praemien_2027.csv")
 
@@ -41,6 +41,14 @@ while add_people == "y":
     versicherungen = get_list_versicherungen(top5, chosen_franchise)
     versicherungen_personen.append(choose_versicherung(versicherungen))
     praemien_personen.append(top5[chosen_franchise][versicherungen.index(versicherungen_personen[-1])][1])
+
+    zeige_zusammenfassung(
+        namen_personen[-1],
+        alter_personen[-1],
+        franchisen_personen[-1],
+        versicherungen_personen[-1],
+        praemien_personen[-1]
+    )
 
 #Schleife add_people ENDE
     add_people = input("Wollen Sie mehr Personen hinzufügen? y/n ")

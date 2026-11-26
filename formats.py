@@ -5,3 +5,15 @@ def format_top5_praemien(top5):
         for versicherung, praemie in top5[franchise]:
             print(f"{versicherung:<22}CHF {praemie:.2f}")
         print()
+
+
+def zeige_zusammenfassung(name, alter, franchise, versicherung, praemie):
+    """Zeigt eine Zusammenfassung der ausgewählten Person und Versicherung."""
+
+    print("\n---------- Zusammenfassung ----------")
+    print("Name:", name)
+    print("Alter:", alter, "Jahre")
+    print("Franchise:", franchise, "CHF")
+    print("Versicherung:", versicherung)
+    print("Monatliche Prämie:", praemie, "CHF")
+    print("------------------------------------")
