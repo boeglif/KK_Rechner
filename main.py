@@ -13,6 +13,10 @@ plz = abfrage_plz(praemien)
 #Leere Listen vergeben
 namen_personen = []
 alter_personen = []
+versicherungen_personen = []
+
+
+#Schleife add_people START
 while add_people == "y":
 
     #Story 2
@@ -32,8 +36,9 @@ while add_people == "y":
 
     #Versicherung wählen
     versicherungen = get_list_versicherungen(top5, chosen_franchise)
-    chosen_versicherung = choose_versicherung(versicherungen)
+    versicherungen_personen.append(choose_versicherung(versicherungen))
 
+#Schleife add_people ENDE
     add_people = input("Wollen Sie mehr Personen hinzufügen? y/n ")
     while add_people != "y" and add_people != "n":
         print("Fehler: Bitte y oder n eingeben.")
