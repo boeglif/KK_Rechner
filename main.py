@@ -14,6 +14,8 @@ plz = abfrage_plz(praemien)
 namen_personen = []
 alter_personen = []
 versicherungen_personen = []
+franchisen_personen = []
+praemien_personen = []
 
 
 #Schleife add_people START
@@ -33,10 +35,12 @@ while add_people == "y":
 
     #Frachise wählen
     chosen_franchise = choose_franchise(top5)
+    franchisen_personen.append(chosen_franchise)
 
     #Versicherung wählen
     versicherungen = get_list_versicherungen(top5, chosen_franchise)
     versicherungen_personen.append(choose_versicherung(versicherungen))
+    praemien_personen.append(top5[chosen_franchise][versicherungen.index(versicherungen_personen[-1])][1])
 
 #Schleife add_people ENDE
     add_people = input("Wollen Sie mehr Personen hinzufügen? y/n ")
